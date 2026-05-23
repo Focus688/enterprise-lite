@@ -3,8 +3,8 @@ import SearchForm from './components/SearchForm'
 import CompanyCard from './components/CompanyCard'
 import type { CompanyData } from './types'
 
-// Cloudflare Worker 后端 (HTTPS，无混合内容问题)
-const API_BASE = 'https://enterprise-lite-api.jupiterx0910.workers.dev'
+// Vercel 部署时前后端同域，用相对路径
+const API_BASE = ''
 
 function App() {
   const [result, setResult] = useState<CompanyData | null>(null)
