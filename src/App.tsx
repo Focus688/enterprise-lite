@@ -3,7 +3,9 @@ import SearchForm from './components/SearchForm'
 import CompanyCard from './components/CompanyCard'
 import type { CompanyData } from './types'
 
-const API_BASE = 'http://159.75.99.16:8765'
+// 检测环境: GitHub Pages 用公网IP, 本地用相对路径
+const isGitHubPages = window.location.hostname.includes('github.io')
+const API_BASE = isGitHubPages ? 'http://159.75.99.16:8765' : '/api'
 
 function App() {
   const [result, setResult] = useState<CompanyData | null>(null)
