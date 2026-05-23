@@ -3,9 +3,8 @@ import SearchForm from './components/SearchForm'
 import CompanyCard from './components/CompanyCard'
 import type { CompanyData } from './types'
 
-// 检测环境: GitHub Pages 用公网IP, 本地用相对路径
-const isGitHubPages = window.location.hostname.includes('github.io')
-const API_BASE = isGitHubPages ? 'http://159.75.99.16:8765' : '/api'
+// Cloudflare Worker 后端 (HTTPS，无混合内容问题)
+const API_BASE = 'https://enterprise-lite-api.jupiterx0910.workers.dev'
 
 function App() {
   const [result, setResult] = useState<CompanyData | null>(null)
